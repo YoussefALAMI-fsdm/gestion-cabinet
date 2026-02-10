@@ -24,13 +24,6 @@ public class RendezVous {
 
     private TypeConsultation typeConsultation;
 
-    private double prixConsultation;
-
-    @PrePersist
-    public  void calculPrixConsultation() {
-       // A implementer apres ( ce basant sur type de consultation et spécialité du Medecin }
-    }
-
     @ManyToOne
     @JoinColumn(name = "idPatient")
     private Patient patient ;
@@ -38,4 +31,7 @@ public class RendezVous {
     @ManyToOne
     @JoinColumn( name = "idMedecin")
     private Medecin medecin ;
+
+    @OneToOne(mappedBy = "rendezVous")
+    private Facture facture;
 }

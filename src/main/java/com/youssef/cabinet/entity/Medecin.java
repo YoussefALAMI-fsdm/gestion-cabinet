@@ -2,19 +2,18 @@ package com.youssef.cabinet.entity;
 
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.hibernate.annotations.CollectionId;
 
 import java.util.Collection;
 
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
 @Table( name = "Medecins",
-        uniqueConstraints = @UniqueConstraint(columnNames = "{emailPatient}"))
+        uniqueConstraints = @UniqueConstraint(columnNames = "{emailMedecin}"))
 public class Medecin {
 
     @Id
